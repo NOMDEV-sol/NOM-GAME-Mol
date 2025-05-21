@@ -23,6 +23,7 @@ const Banner = () => {
   const dotImages = [dot1, dot2, dot3, dot4, dot5];
   
   // Initialize dots
+  // Initialize dots
   useEffect(() => {
     const generateDots = () => {
       const newDots = [];
@@ -40,7 +41,7 @@ const Banner = () => {
     if (bannerRef.current) {
       generateDots();
     }
-  }, []);
+  }, [dotImages.length]);
   
   // Handle mouse movement
   useEffect(() => {
@@ -133,7 +134,7 @@ const Banner = () => {
         cancelAnimationFrame(animationFrameRef.current);
       }
     };
-  }, [mousePosition, snakePosition, score]);
+  }, [mousePosition, snakePosition, score, dotImages.length]);
   
   return (
     <div 

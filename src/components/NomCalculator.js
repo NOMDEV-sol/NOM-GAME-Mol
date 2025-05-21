@@ -187,7 +187,7 @@ const NomCalculator = () => {
 
       <p className="mt-4 text-sm text-gray-600 dark:text-gray-400">
         * Market cap currently below $50M, triggering additional 2% deflation tax<br/>
-        * Each $100 burn increases all holders' wealth by 0.0008%
+        * Each $100 burn increases all holders&apos; wealth by 0.0008%
       </p>
     </div>
   );

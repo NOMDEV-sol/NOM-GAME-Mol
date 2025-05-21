@@ -5,6 +5,7 @@ import { ChevronDown, ChevronUp, Search, RefreshCw, TrendingUp, TrendingDown, Za
 import _ from 'lodash';
 import { Connection, PublicKey, clusterApiUrl } from '@solana/web3.js';
 import axios from 'axios';
+import defaultchain from '../assets/default-chain.jpg';
 
 // Debounce hook
 function useDebounce(value, delay) {
@@ -980,20 +981,22 @@ function Dashboard() {
                           <div className="flex items-center">
                             <div className="flex-shrink-0 h-10 w-10 relative">
                               {token.logoURI ? (
+                                /* eslint-disable @next/next/no-img-element */
                                 <img className="h-10 w-10 rounded-full" src={token.logoURI} alt={token.name} />
+                                /* eslint-enable @next/next/no-img-element */
                               ) : (
                                 <div className="h-10 w-10 rounded-full bg-gray-200 flex items-center justify-center text-gray-500">
                                   {token.name.charAt(0)}
                                 </div>
                               )}
-                              <div className="absolute -bottom-1 -right-1 h-5 w-5 rounded-full bg-gray-100 flex items-center justify-center">
+                              {/* <div className="absolute -bottom-1 -right-1 h-5 w-5 rounded-full bg-gray-100 flex items-center justify-center">
                                 <img 
                                   src={`/images/${token.chain.toLowerCase()}.png`} 
                                   alt={token.chain} 
                                   className="h-4 w-4 rounded-full"
-                                  onError={(e) => {e.target.src = "/images/default-chain.png"}}
+                                  onError={(e) => {e.target.src = {defaultchain}}}
                                 />
-                              </div>
+                              </div> */}
                             </div>
                             <div className="ml-4">
                               <div className="text-sm font-medium text-gray-900">{token.name}</div>
@@ -1063,19 +1066,23 @@ function Dashboard() {
                 <div className="flex items-center">
                   <div className="h-12 w-12 relative mr-4">
                     {selectedToken.logoURI ? (
+                      /* eslint-disable @next/next/no-img-element */
                       <img className="h-12 w-12 rounded-full" src={selectedToken.logoURI} alt={selectedToken.name} />
+                      /* eslint-enable @next/next/no-img-element */
                     ) : (
                       <div className="h-12 w-12 rounded-full bg-gray-200 flex items-center justify-center text-gray-500 text-xl">
                         {selectedToken.name.charAt(0)}
                       </div>
                     )}
                     <div className="absolute -bottom-1 -right-1 h-6 w-6 rounded-full bg-gray-100 flex items-center justify-center">
+                      {/* eslint-disable @next/next/no-img-element */}
                       <img 
                         src={`/images/${selectedToken.chain.toLowerCase()}.png`} 
                         alt={selectedToken.chain} 
                         className="h-5 w-5 rounded-full"
                         onError={(e) => {e.target.src = "/images/default-chain.png"}}
                       />
+                      {/* eslint-enable @next/next/no-img-element */}
                     </div>
                   </div>
                   <div>

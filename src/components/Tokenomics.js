@@ -109,7 +109,7 @@ const Tokenomics = () => {
             <h3 className="text-xl sm:text-2xl font-bold mb-2 sm:mb-4 text-gray-800 dark:text-white">No Revenue Extraction</h3>
             <p className="text-base sm:text-lg text-gray-700 dark:text-gray-300">
               Unlike most tokens that direct transaction taxes to team wallets or marketing funds, 
-              NOM's entire tax structure is designed for one purpose: <span className="font-bold text-red-500">burning tokens</span>.
+              NOM&apos;s entire tax structure is designed for one purpose: <span className="font-bold text-red-500">burning tokens</span>.
             </p>
             <p className="text-base sm:text-lg text-gray-700 dark:text-gray-300">
               This creates a truly community-owned token where the value accrues to holders through 
@@ -117,8 +117,8 @@ const Tokenomics = () => {
             </p>
             <div className="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg border-l-4 border-purple-500">
               <p className="font-medium text-gray-800 dark:text-white text-sm sm:text-base">
-                "NOM is designed to be the ultimate deflationary meme token - every transaction makes your 
-                holdings more valuable through automatic supply reduction."
+                &quot;NOM is designed to be the ultimate deflationary meme token - every transaction makes your 
+                holdings more valuable through automatic supply reduction.&quot;
               </p>
             </div>
           </div>
@@ -234,7 +234,7 @@ const Tokenomics = () => {
                   <div className="flex items-start">
                     <span className="text-red-500 mr-2">•</span>
                     <div>
-                      <p><strong>Burn Ratio</strong> = 70%-95% (determined by AI based on the "decay level" of dead tokens)</p>
+                      <p><strong>Burn Ratio</strong> = 70%-95% (determined by AI based on the &quot;decay level&quot; of dead tokens)</p>
                       <p className="text-xs italic mt-1">Like fruit: the less fresh it is, the less edible portion remains</p>
                     </div>
                   </div>
@@ -242,7 +242,7 @@ const Tokenomics = () => {
                     <span className="text-red-500 mr-2">•</span>
                     <div>
                       <p><strong>Station Owner Reward</strong> = Total burn amount × 5%</p>
-                      <p className="text-xs italic mt-1">Regional managers automatically receive a "pizza box fragment" reward</p>
+                      <p className="text-xs italic mt-1">Regional managers automatically receive a &quot;pizza box fragment&quot; reward</p>
                     </div>
                   </div>
                 </div>
@@ -318,7 +318,7 @@ const Tokenomics = () => {
           </div>
           <div className="mt-6 sm:mt-8 text-center">
             <p className="text-sm sm:text-lg text-gray-700 dark:text-gray-300">
-              With our hyperdeflationary model, NOM's circulating supply is projected to decrease by up to 70% 
+              With our hyperdeflationary model, NOM&apos;s circulating supply is projected to decrease by up to 70% 
               within the first two years, creating significant value for long-term holders.
             </p>
           </div>
