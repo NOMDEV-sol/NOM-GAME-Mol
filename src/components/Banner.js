@@ -3,12 +3,12 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 
-// Import dot images
-import dot1 from '../assets/dot1.png';
-import dot2 from '../assets/dot2.png';
-import dot3 from '../assets/dot3.png';
-import dot4 from '../assets/dot4.png';
-import dot5 from '../assets/dot5.png';
+// Remove dot image imports - we'll use public URLs instead
+// import dot1 from '../assets/dot1.png';
+// import dot2 from '../assets/dot2.png';
+// import dot3 from '../assets/dot3.png';
+// import dot4 from '../assets/dot4.png';
+// import dot5 from '../assets/dot5.png';
 
 const Banner = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -19,8 +19,14 @@ const Banner = () => {
   const bannerRef = useRef(null);
   const animationFrameRef = useRef(null);
   
-  // Array of dot images
-  const dotImages = [dot1, dot2, dot3, dot4, dot5];
+  // Array of dot images using public URLs
+  const dotImages = [
+    '/images/dots/dot1.png',
+    '/images/dots/dot2.png',
+    '/images/dots/dot3.png',
+    '/images/dots/dot4.png',
+    '/images/dots/dot5.png'
+  ];
   
   // Initialize dots
   // Initialize dots
@@ -280,6 +286,7 @@ const Banner = () => {
             width={24} 
             height={24}
             className="w-full h-full object-contain"
+            unoptimized={true}
           />
         </div>
       ))}

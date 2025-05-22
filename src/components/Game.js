@@ -3,11 +3,19 @@
 import React, { useState } from 'react';
 import styled from "styled-components";
 import { motion } from "framer-motion";
-// Import the GIF directly
-import dumpGif from "../assets/go.gif";
-import buildStation from "../assets/buildstation.gif";
-import pvp from "../assets/pvp.gif";
-import dispose from "../assets/dispose.gif";
+// Remove direct imports for GIFs
+// import dumpGif from "../assets/go.gif";
+// import buildStation from "../assets/buildstation.gif";
+// import pvp from "../assets/pvp.gif";
+// import dispose from "../assets/dispose.gif";
+
+// Define public paths to images
+const gameImages = {
+  dumpGif: '/images/game/go.gif',
+  buildStation: '/images/game/buildstation.gif',
+  pvp: '/images/game/pvp.gif',
+  dispose: '/images/game/dispose.gif'
+};
 
 // Animation variants
 const fadeInUp = {
@@ -289,7 +297,7 @@ const Game = () => {
                 variants={fadeInUp}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                onClick={() => window.open("https://github.com/NOMDEV-sol/NOM-GAME-Mol/tree/main", "_blank")}
+                onClick={() => window.open("https://github.com/orgs/NomSol/repositories", "_blank")}
               >
                 Track development progress by monitoring this GitHub repository
               </CTAButton>
@@ -299,12 +307,13 @@ const Game = () => {
                 <div className="absolute inset-0 flex flex-col">
                   <div className="flex-1 flex items-center justify-center p-2 overflow-hidden">
                     <Image 
-                      src={dumpGif.src} 
+                      src={gameImages.dumpGif} 
                       alt="Find & Go to the recycle station"
                       variants={fadeInUp}
                       onLoad={handleImageLoad}
                       isLoaded={imageLoaded}
                       className="dark:opacity-90"
+                      unoptimized={true}
                     />
                   </div>
                   <div className="bg-black bg-opacity-60 text-white text-xs p-2 text-center z-10 mt-auto">
@@ -317,12 +326,13 @@ const Game = () => {
                 <div className="absolute inset-0 flex flex-col">
                   <div className="flex-1 flex items-center justify-center p-2 overflow-hidden">
                     <Image 
-                      src={buildStation.src} 
+                      src={gameImages.buildStation} 
                       alt="Build the recycle station"
                       variants={fadeInUp}
                       onLoad={handleImageLoad}
                       isLoaded={imageLoaded}
                       className="dark:opacity-90"
+                      unoptimized={true}
                     />
                   </div>
                   <div className="bg-black bg-opacity-60 text-white text-xs p-2 text-center z-10 mt-auto">
@@ -335,12 +345,13 @@ const Game = () => {
                 <div className="absolute inset-0 flex flex-col">
                   <div className="flex-1 flex items-center justify-center p-2 overflow-hidden">
                     <Image 
-                      src={dispose.src} 
+                      src={gameImages.dispose} 
                       alt="Dispose your dead coins"
                       variants={fadeInUp}
                       onLoad={handleImageLoad}
                       isLoaded={imageLoaded}
                       className="dark:opacity-90"
+                      unoptimized={true}
                     />
                   </div>
                   <div className="bg-black bg-opacity-60 text-white text-xs p-2 text-center z-10 mt-auto">
@@ -353,12 +364,13 @@ const Game = () => {
                 <div className="absolute inset-0 flex flex-col">
                   <div className="flex-1 flex items-center justify-center p-2 overflow-hidden">
                     <Image 
-                      src={pvp.src} 
+                      src={gameImages.pvp} 
                       alt="PVP to win other's dead coins"
                       variants={fadeInUp}
                       onLoad={handleImageLoad}
                       isLoaded={imageLoaded}
                       className="dark:opacity-90"
+                      unoptimized={true}
                     />
                   </div>
                   <div className="bg-black bg-opacity-60 text-white text-xs p-2 text-center z-10 mt-auto">

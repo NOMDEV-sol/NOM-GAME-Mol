@@ -5,9 +5,6 @@ const nextConfig = {
     unoptimized: true,
   },
   trailingSlash: true,
-  distDir: 'build',
-  assetPrefix: '/',
-  basePath: '',
 };
 
 export default nextConfig;

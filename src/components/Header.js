@@ -3,7 +3,6 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import Icon from '../assets/icon.png';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -55,11 +54,12 @@ export default function Header() {
         <Link href="/" className="flex items-center z-20">
           <div className="relative w-10 h-10 sm:w-12 sm:h-12">
             <Image 
-              src={Icon} 
+              src="/images/icon.png" 
               alt="NOM Logo" 
               fill
               className="object-contain"
               priority
+              unoptimized={true}
             />
           </div>
           <span className="ml-2 text-lg font-bold">NOM</span>

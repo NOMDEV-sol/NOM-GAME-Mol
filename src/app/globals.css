@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @import "@fontsource/press-start-2p";
+@import "@fontsource/orbitron";
 
 :root {
   --background: #ffffff;
@@ -23,7 +24,7 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: 'Press Start 2P', cursive !important;
+  font-family: 'Orbitron', cursive !important;
 }
 
 .container {
