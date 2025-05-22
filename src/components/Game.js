@@ -33,7 +33,7 @@ const fadeInUp = {
 const GameContainer = styled.div`
     width: 100%;
     padding: 2rem 0;
-    background-color: #ffffff;
+    background-color: transparent;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -250,7 +250,7 @@ const Game = () => {
   };
 
   return (
-    <section className="py-16 md:py-24 bg-white dark:bg-gray-900">
+    <section id="game" className="py-16 md:py-24 bg-white dark:bg-gray-900">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800 dark:text-white">
@@ -262,7 +262,7 @@ const Game = () => {
           </p>
         </div>
         
-        <GameContainer className="dark:bg-gray-900">
+        <GameContainer className="dark:bg-gray-900 bg-white">
           <ContentWrapper
             initial="hidden"
             whileInView="visible"

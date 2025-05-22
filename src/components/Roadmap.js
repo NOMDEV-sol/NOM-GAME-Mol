@@ -51,7 +51,7 @@ const Roadmap = () => {
   ];
 
   return (
-    <section className="w-full min-h-screen bg-white dark:bg-gray-900 pt-20">
+    <section id="roadmap" className="w-full min-h-screen bg-white dark:bg-gray-900 pt-20">
       <div className="container mx-auto px-4 py-12 sm:py-16">
         <h2 className="text-3xl sm:text-4xl font-bold text-center mb-8 sm:mb-16 text-gray-800 dark:text-white">
           NOM Development Roadmap

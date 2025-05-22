@@ -15,7 +15,7 @@ const Tokenomics = () => {
   
 
   return (
-    <section className="w-full min-h-screen bg-white dark:bg-gray-900 pt-20">
+    <section className="w-full min-h-screen bg-white dark:bg-gray-900 pt-20" id="tokenomics-section">
       <div className="container mx-auto px-4 py-12 sm:py-16">
         <h2 className="text-3xl sm:text-4xl font-bold text-center mb-8 sm:mb-16 text-gray-800 dark:text-white">
           NOM Tokenomics

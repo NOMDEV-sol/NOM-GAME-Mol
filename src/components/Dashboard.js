@@ -720,25 +720,25 @@ function Dashboard() {
     if (totalPages <= 1) return null;
     
     return (
-      <div className="flex items-center justify-between border-t border-gray-200 bg-white px-4 py-3 sm:px-6 mt-4">
+      <div className="flex items-center justify-between border-t border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 px-4 py-3 sm:px-6 mt-4">
         <div className="flex flex-1 justify-between sm:hidden">
           <button
             onClick={goToPrevPage}
             disabled={currentPage === 1}
-            className={`relative inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium ${
-              currentPage === 1 ? 'text-gray-300' : 'text-gray-700 hover:bg-gray-50'
+            className={`relative inline-flex items-center rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 px-4 py-2 text-sm font-medium ${
+              currentPage === 1 ? 'text-gray-300 dark:text-gray-600' : 'text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700'
             }`}
           >
             Previous
           </button>
-          <div className="text-sm text-gray-700">
+          <div className="text-sm text-gray-700 dark:text-gray-300">
             <span className="font-medium">{currentPage}</span> / <span className="font-medium">{totalPages}</span>
           </div>
           <button
             onClick={goToNextPage}
             disabled={currentPage === totalPages}
-            className={`relative ml-3 inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium ${
-              currentPage === totalPages ? 'text-gray-300' : 'text-gray-700 hover:bg-gray-50'
+            className={`relative ml-3 inline-flex items-center rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 px-4 py-2 text-sm font-medium ${
+              currentPage === totalPages ? 'text-gray-300 dark:text-gray-600' : 'text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700'
             }`}
           >
             Next
@@ -746,7 +746,7 @@ function Dashboard() {
         </div>
         <div className="hidden sm:flex sm:flex-1 sm:items-center sm:justify-between">
           <div>
-            <p className="text-sm text-gray-700">
+            <p className="text-sm text-gray-700 dark:text-gray-300">
               Showing <span className="font-medium">{(currentPage - 1) * tokensPerPage + 1}</span> to 
               <span className="font-medium"> {Math.min(currentPage * tokensPerPage, filteredAndSortedTokens.length)}</span> of 
               <span className="font-medium">{filteredAndSortedTokens.length}</span> results
@@ -759,9 +759,9 @@ function Dashboard() {
                 disabled={currentPage === 1}
                 className={`relative inline-flex items-center rounded-l-md px-2 py-2 ${
                   currentPage === 1 
-                    ? 'text-gray-300' 
-                    : 'text-gray-500 hover:bg-gray-50'
-                } ring-1 ring-inset ring-gray-300 focus:outline-offset-0`}
+                    ? 'text-gray-300 dark:text-gray-600' 
+                    : 'text-gray-500 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-700'
+                } ring-1 ring-inset ring-gray-300 dark:ring-gray-600 focus:outline-offset-0`}
               >
                 <span className="sr-only">Previous</span>
                 <svg className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -770,8 +770,7 @@ function Dashboard() {
               </button>
               
               {/* Page numbers */}
-                           {/* Page numbers */}
-                           {Array.from({ length: Math.min(5, totalPages) }, (_, i) => {
+              {Array.from({ length: Math.min(5, totalPages) }, (_, i) => {
                 // Show pages around current page
                 let pageNum;
                 if (totalPages <= 5) {
@@ -791,7 +790,7 @@ function Dashboard() {
                     className={`relative inline-flex items-center px-4 py-2 text-sm font-semibold ${
                       currentPage === pageNum
                         ? 'z-10 bg-blue-600 text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600'
-                        : 'text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:outline-offset-0'
+                        : 'text-gray-900 dark:text-gray-300 ring-1 ring-inset ring-gray-300 dark:ring-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700 focus:outline-offset-0'
                     }`}
                   >
                     {pageNum}
@@ -804,9 +803,9 @@ function Dashboard() {
                 disabled={currentPage === totalPages}
                 className={`relative inline-flex items-center rounded-r-md px-2 py-2 ${
                   currentPage === totalPages 
-                    ? 'text-gray-300' 
-                    : 'text-gray-500 hover:bg-gray-50'
-                } ring-1 ring-inset ring-gray-300 focus:outline-offset-0`}
+                    ? 'text-gray-300 dark:text-gray-600' 
+                    : 'text-gray-500 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-700'
+                } ring-1 ring-inset ring-gray-300 dark:ring-gray-600 focus:outline-offset-0`}
               >
                 <span className="sr-only">Next</span>
                 <svg className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -849,12 +848,12 @@ function Dashboard() {
   // Only render client-side to avoid hydration errors
   if (!isClient) {
     return (
-      <div className="bg-gray-50 min-h-screen p-4 sm:p-6">
+      <div className="bg-gray-50 dark:bg-gray-800 min-h-screen p-4 sm:p-6">
         <div className="max-w-7xl mx-auto">
-          <div className="bg-white rounded-lg shadow-lg p-4 sm:p-6">
+          <div className="bg-white dark:bg-gray-900 rounded-lg shadow-lg p-4 sm:p-6">
             <div className="flex flex-col items-center justify-center py-12">
               <RefreshCw size={40} className="text-blue-500 mb-4" />
-              <p className="text-gray-600 text-lg">Loading...</p>
+              <p className="text-gray-600 dark:text-gray-300 text-lg">Loading...</p>
             </div>
           </div>
         </div>
@@ -863,9 +862,9 @@ function Dashboard() {
   }
 
   return (
-    <div className="bg-gray-50 min-h-screen p-4 sm:p-6">
+    <div className="bg-gray-50 dark:bg-gray-800 min-h-screen p-4 sm:p-6">
       <div className="max-w-7xl mx-auto">
-        <div className="bg-white rounded-lg shadow-lg p-4 sm:p-6">
+        <div className="bg-white dark:bg-gray-900 rounded-lg shadow-lg p-4 sm:p-6">
           {/* Header */}
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 gap-4">
             <div>
@@ -930,53 +929,53 @@ function Dashboard() {
               </div>
             ) : (
               <>
-                <table className="min-w-full divide-y divide-gray-200">
-                  <thead className="bg-gray-50">
+                <table className="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
+                  <thead className="bg-gray-50 dark:bg-gray-800">
                     <tr>
-                      <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer" onClick={() => handleSort('name')}>
+                      <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider cursor-pointer" onClick={() => handleSort('name')}>
                         <div className="flex items-center">
                           Token
                           {renderSortIcon('name')}
                         </div>
                       </th>
-                      <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer" onClick={() => handleSort('chain')}>
+                      <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider cursor-pointer" onClick={() => handleSort('chain')}>
                         <div className="flex items-center">
                           Chain
                           {renderSortIcon('chain')}
                         </div>
                       </th>
-                      <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer" onClick={() => handleSort('liquidity')}>
+                      <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider cursor-pointer" onClick={() => handleSort('liquidity')}>
                         <div className="flex items-center">
                           Liquidity
                           {renderSortIcon('liquidity')}
                         </div>
                       </th>
-                      <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer" onClick={() => handleSort('priceChange')}>
+                      <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider cursor-pointer" onClick={() => handleSort('priceChange')}>
                         <div className="flex items-center">
                           24h Change
                           {renderSortIcon('priceChange')}
                         </div>
                       </th>
-                      <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer" onClick={() => handleSort('deathScore')}>
+                      <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider cursor-pointer" onClick={() => handleSort('deathScore')}>
                         <div className="flex items-center">
                           Death Score
                           {renderSortIcon('deathScore')}
                         </div>
                       </th>
-                      <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer" onClick={() => handleSort('recoveryValue')}>
+                      <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider cursor-pointer" onClick={() => handleSort('recoveryValue')}>
                         <div className="flex items-center">
                           Recovery Potential
                           {renderSortIcon('recoveryValue')}
                         </div>
                       </th>
-                      <th scope="col" className="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">
+                      <th scope="col" className="px-6 py-3 text-right text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
                         Actions
                       </th>
                     </tr>
                   </thead>
-                  <tbody className="bg-white divide-y divide-gray-200">
+                  <tbody className="bg-white dark:bg-gray-900 divide-y divide-gray-200 dark:divide-gray-700">
                     {currentTokens.map((token, index) => (
-                      <tr key={token.address} className={index % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
+                      <tr key={token.address} className={index % 2 === 0 ? 'bg-white dark:bg-gray-900' : 'bg-gray-50 dark:bg-gray-800'}>
                         <td className="px-6 py-4 whitespace-nowrap">
                           <div className="flex items-center">
                             <div className="flex-shrink-0 h-10 w-10 relative">
@@ -985,22 +984,14 @@ function Dashboard() {
                                 <img className="h-10 w-10 rounded-full" src={token.logoURI} alt={token.name} />
                                 /* eslint-enable @next/next/no-img-element */
                               ) : (
-                                <div className="h-10 w-10 rounded-full bg-gray-200 flex items-center justify-center text-gray-500">
+                                <div className="h-10 w-10 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center text-gray-500 dark:text-gray-400">
                                   {token.name.charAt(0)}
                                 </div>
                               )}
-                              {/* <div className="absolute -bottom-1 -right-1 h-5 w-5 rounded-full bg-gray-100 flex items-center justify-center">
-                                <img 
-                                  src={`/images/${token.chain.toLowerCase()}.png`} 
-                                  alt={token.chain} 
-                                  className="h-4 w-4 rounded-full"
-                                  onError={(e) => {e.target.src = {defaultchain}}}
-                                />
-                              </div> */}
                             </div>
                             <div className="ml-4">
-                              <div className="text-sm font-medium text-gray-900">{token.name}</div>
-                              <div className="text-xs text-gray-500">{token.address.substring(0, 6)}...{token.address.substring(token.address.length - 4)}</div>
+                              <div className="text-sm font-medium text-gray-900 dark:text-white">{token.name}</div>
+                              <div className="text-xs text-gray-500 dark:text-gray-400">{token.address.substring(0, 6)}...{token.address.substring(token.address.length - 4)}</div>
                             </div>
                           </div>
                           {token.tags && token.tags.length > 0 && (
@@ -1060,7 +1051,7 @@ function Dashboard() {
       {/* Token Details Modal */}
       {selectedToken && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
-          <div className="bg-white rounded-lg shadow-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+          <div className="bg-white dark:bg-gray-900 rounded-lg shadow-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
             <div className="p-6">
               <div className="flex justify-between items-start">
                 <div className="flex items-center">
@@ -1070,11 +1061,11 @@ function Dashboard() {
                       <img className="h-12 w-12 rounded-full" src={selectedToken.logoURI} alt={selectedToken.name} />
                       /* eslint-enable @next/next/no-img-element */
                     ) : (
-                      <div className="h-12 w-12 rounded-full bg-gray-200 flex items-center justify-center text-gray-500 text-xl">
+                      <div className="h-12 w-12 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center text-gray-500 dark:text-gray-400 text-xl">
                         {selectedToken.name.charAt(0)}
                       </div>
                     )}
-                    <div className="absolute -bottom-1 -right-1 h-6 w-6 rounded-full bg-gray-100 flex items-center justify-center">
+                    <div className="absolute -bottom-1 -right-1 h-6 w-6 rounded-full bg-gray-100 dark:bg-gray-700 flex items-center justify-center">
                       {/* eslint-disable @next/next/no-img-element */}
                       <img 
                         src={`/images/${selectedToken.chain.toLowerCase()}.png`} 
@@ -1086,13 +1077,13 @@ function Dashboard() {
                     </div>
                   </div>
                   <div>
-                    <h2 className="text-2xl font-bold text-gray-800">{selectedToken.name}</h2>
-                    <p className="text-gray-500 text-sm">{selectedToken.address}</p>
+                    <h2 className="text-2xl font-bold text-gray-800 dark:text-white">{selectedToken.name}</h2>
+                    <p className="text-gray-500 dark:text-gray-400 text-sm">{selectedToken.address}</p>
                   </div>
                 </div>
                 <button 
                   onClick={closeTokenDetails}
-                  className="text-gray-500 hover:text-gray-700"
+                  className="text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200"
                 >
                   <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -1101,24 +1092,24 @@ function Dashboard() {
               </div>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
-                <div className="bg-gray-50 p-4 rounded-lg">
-                  <h3 className="text-lg font-semibold mb-4">On-chain Data</h3>
+                <div className="bg-gray-50 dark:bg-gray-800 p-4 rounded-lg">
+                  <h3 className="text-lg font-semibold mb-4 text-gray-800 dark:text-white">On-chain Data</h3>
                   <div className="space-y-3">
                     <div className="flex justify-between">
-                      <span className="text-gray-600">Current Market Cap:</span>
-                      <span className="font-medium">${formatNumber(selectedToken.onChainData.currentMarketCap)}</span>
+                      <span className="text-gray-600 dark:text-gray-400">Current Market Cap:</span>
+                      <span className="font-medium text-gray-900 dark:text-white">${formatNumber(selectedToken.onChainData.currentMarketCap)}</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-gray-600">Highest Market Cap:</span>
-                      <span className="font-medium">${formatNumber(selectedToken.onChainData.peakMarketCap)}</span>
+                      <span className="text-gray-600 dark:text-gray-400">Highest Market Cap:</span>
+                      <span className="font-medium text-gray-900 dark:text-white">${formatNumber(selectedToken.onChainData.peakMarketCap)}</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-gray-600">Liquidity:</span>
-                      <span className="font-medium">${formatNumber(selectedToken.onChainData.liquidityUSD)}</span>
+                      <span className="text-gray-600 dark:text-gray-400">Liquidity:</span>
+                      <span className="font-medium text-gray-900 dark:text-white">${formatNumber(selectedToken.onChainData.liquidityUSD)}</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-gray-600">24h Volume:</span>
-                      <span className="font-medium">${formatNumber(selectedToken.onChainData.dailyVolume)}</span>
+                      <span className="text-gray-600 dark:text-gray-400">24h Volume:</span>
+                      <span className="font-medium text-gray-900 dark:text-white">${formatNumber(selectedToken.onChainData.dailyVolume)}</span>
                     </div>
                     {/* <div className="flex justify-between">
                       <span className="text-gray-600">Holder Count:</span>
@@ -1129,14 +1120,14 @@ function Dashboard() {
                       <span className="font-medium">{new Date(selectedToken.onChainData.createdAt).toLocaleDateString()}</span>
                     </div> */}
                     <div className="flex justify-between">
-                      <span className="text-gray-600">Last Active:</span>
-                      <span className="font-medium">{new Date(selectedToken.onChainData.lastActiveTimestamp).toLocaleDateString()}</span>
+                      <span className="text-gray-600 dark:text-gray-400">Last Active:</span>
+                      <span className="font-medium text-gray-900 dark:text-white">{new Date(selectedToken.onChainData.lastActiveTimestamp).toLocaleDateString()}</span>
                     </div>
                   </div>
                 </div>
                 
-                <div className="bg-gray-50 p-4 rounded-lg">
-                  <h3 className="text-lg font-semibold mb-4">Social Data</h3>
+                <div className="bg-gray-50 dark:bg-gray-800 p-4 rounded-lg">
+                  <h3 className="text-lg font-semibold mb-4 text-gray-800 dark:text-white">Social Data</h3>
                   <div className="space-y-3">
                     <div className="flex justify-between">
                       <span className="text-gray-600">Twitter Search Volume:</span>
@@ -1174,13 +1165,13 @@ function Dashboard() {
                 </div>
               </div>
               
-              <div className="mt-6 bg-gray-50 p-4 rounded-lg">
-                <h3 className="text-lg font-semibold mb-4">Score</h3>
+              <div className="mt-6 bg-gray-50 dark:bg-gray-800 p-4 rounded-lg">
+                <h3 className="text-lg font-semibold mb-4 text-gray-800 dark:text-white">Score</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <p className="text-gray-600 mb-2">Death Score (Higher is more dangerous)</p>
+                    <p className="text-gray-600 dark:text-gray-400 mb-2">Death Score (Higher is more dangerous)</p>
                     <div className="flex items-center">
-                      <div className="w-full bg-gray-200 rounded-full h-4 mr-2">
+                      <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-4 mr-2">
                         <div 
                           className={`h-4 rounded-full ${
                             selectedToken.deathScore > 80 ? 'bg-red-600' : 
@@ -1191,11 +1182,11 @@ function Dashboard() {
                           style={{ width: `${selectedToken.deathScore}%` }}
                         ></div>
                       </div>
-                      <span className="font-bold">{selectedToken.deathScore.toFixed(0)}</span>
+                      <span className="font-bold text-gray-900 dark:text-white">{selectedToken.deathScore.toFixed(0)}</span>
                     </div>
                   </div>
                   <div>
-                    <p className="text-gray-600 mb-2">Recovery Potential (Higher is better)</p>
+                    <p className="text-gray-600 dark:text-gray-400 mb-2">Recovery Potential (Higher is better)</p>
                     <div className="flex items-center">
                       <div className="flex items-center mr-2">
                         {[...Array(5)].map((_, i) => {
@@ -1204,7 +1195,7 @@ function Dashboard() {
                           return (
                             <svg 
                               key={i} 
-                              className={`w-6 h-6 ${isFilled ? 'text-yellow-500' : 'text-gray-300'}`} 
+                              className={`w-6 h-6 ${isFilled ? 'text-yellow-500' : 'text-gray-300 dark:text-gray-600'}`} 
                               fill="currentColor" 
                               viewBox="0 0 20 20"
                             >
@@ -1213,7 +1204,7 @@ function Dashboard() {
                           );
                         })}
                       </div>
-                      <span className="font-bold">1.0/5</span>
+                      <span className="font-bold text-gray-900 dark:text-white">1.0/5</span>
                     </div>
                   </div>
                 </div>
@@ -1222,7 +1213,7 @@ function Dashboard() {
               <div className="mt-6 flex justify-end">
                 <button
                   onClick={closeTokenDetails}
-                  className="px-4 py-2 border border-gray-300 rounded-md text-gray-700 mr-2 hover:bg-gray-50"
+                  className="px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md text-gray-700 dark:text-gray-300 mr-2 hover:bg-gray-50 dark:hover:bg-gray-700"
                 >
                   Close
                 </button>

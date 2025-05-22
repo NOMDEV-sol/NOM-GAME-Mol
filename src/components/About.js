@@ -6,7 +6,7 @@ import nomSnake from '../assets/nom-hat.png';
 
 const About = () => {
   return (
-    <section className="w-full min-h-screen bg-white dark:bg-gray-900 pt-20">
+    <section className="w-full min-h-screen bg-white dark:bg-gray-900 pt-20" id="about-section">
       <div className="container mx-auto px-4 py-12 sm:py-16">
         <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12 sm:mb-20 text-gray-800 dark:text-white">About NOM</h2>
         

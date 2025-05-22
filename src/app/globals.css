@@ -30,3 +30,8 @@ body {
 .container {
   max-width: 100%;
 }
+
+/* Add smooth scrolling behavior */
+html {
+  scroll-behavior: smooth;
+}

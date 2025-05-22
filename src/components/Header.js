@@ -46,6 +46,23 @@ export default function Header() {
     };
   }, [isMenuOpen]);
 
+  // Smooth scroll function with offset for fixed header
+  const scrollToSection = (e, sectionId) => {
+    e.preventDefault();
+    setIsMenuOpen(false);
+    
+    const section = document.getElementById(sectionId);
+    if (section) {
+      const headerHeight = 80; // Approximate header height
+      const sectionTop = section.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+      
+      window.scrollTo({
+        top: sectionTop,
+        behavior: 'smooth'
+      });
+    }
+  };
+
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
       scrolled ? 'bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm shadow-md' : 'bg-white dark:bg-gray-900'
@@ -88,9 +105,10 @@ export default function Header() {
         <nav className="hidden md:block font-bold">
           <ul className="flex space-x-6">
             <li><Link href="/" className="hover:text-purple-500 transition-colors">Home</Link></li>
-            <li><Link href="/about" className="hover:text-purple-500 transition-colors">About</Link></li>
-            <li><Link href="/tokenomics" className="hover:text-purple-500 transition-colors">Tokenomics</Link></li>
-            <li><Link href="/roadmap" className="hover:text-purple-500 transition-colors">Roadmap</Link></li>
+            <li><a href="#about-section" onClick={(e) => scrollToSection(e, 'about-section')} className="hover:text-purple-500 transition-colors cursor-pointer">About</a></li>
+            <li><a href="#tokenomics-section" onClick={(e) => scrollToSection(e, 'tokenomics-section')} className="hover:text-purple-500 transition-colors cursor-pointer">Tokenomics</a></li>
+            <li><a href="#roadmap" onClick={(e) => scrollToSection(e, 'roadmap')} className="hover:text-purple-500 transition-colors cursor-pointer">Roadmap</a></li>
+            <li><a href="#game" onClick={(e) => scrollToSection(e, 'game')} className="hover:text-purple-500 transition-colors cursor-pointer">Game</a></li>
           </ul>
         </nav>
       </div>
@@ -125,31 +143,40 @@ export default function Header() {
                 </Link>
               </li>
               <li>
-                <Link 
-                  href="/about" 
+                <a 
+                  href="#about-section" 
                   className="block py-2 px-4 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 font-medium"
-                  onClick={() => setIsMenuOpen(false)}
+                  onClick={(e) => scrollToSection(e, 'about-section')}
                 >
                   About
-                </Link>
+                </a>
               </li>
               <li>
-                <Link 
-                  href="/tokenomics" 
+                <a 
+                  href="#tokenomics-section" 
                   className="block py-2 px-4 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 font-medium"
-                  onClick={() => setIsMenuOpen(false)}
+                  onClick={(e) => scrollToSection(e, 'tokenomics-section')}
                 >
                   Tokenomics
-                </Link>
+                </a>
               </li>
               <li>
-                <Link 
-                  href="/roadmap" 
+                <a 
+                  href="#roadmap" 
                   className="block py-2 px-4 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 font-medium"
-                  onClick={() => setIsMenuOpen(false)}
+                  onClick={(e) => scrollToSection(e, 'roadmap')}
                 >
                   Roadmap
-                </Link>
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="#game" 
+                  className="block py-2 px-4 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 font-medium"
+                  onClick={(e) => scrollToSection(e, 'game')}
+                >
+                  Game
+                </a>
               </li>
             </ul>
             

@@ -19,14 +19,14 @@
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "recharts": "^2.15.3",
-    "styled-components": "^6.1.18",
-    "vercel": "^42.1.1"
+    "styled-components": "^6.1.18"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
     "@tailwindcss/postcss": "^4",
     "eslint": "^9",
     "eslint-config-next": "15.3.2",
-    "tailwindcss": "^4"
+    "tailwindcss": "^4",
+    "vercel": "^42.1.1"
   }
 }
